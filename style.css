@@ -135,3 +135,38 @@ h2 {
   justify-content: space-between;
   align-items: center;
 }
+
+/*Вітаміни*/
+#p-vitamins {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.vitamin {
+  border: 1px solid;
+  margin:10px;
+  padding:10px;
+  border-radius: 5px;
+  box-shadow: #666666 5px 5px 10px;
+  width: 150px;
+  height: 300px;
+}
+/*Вітаміни*/
+#p-vitamins {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.vitamin {
+  border: 1px solid;
+  margin:10px;
+  padding:10px;
+  border-radius: 5px;
+  box-shadow: #666666 5px 5px 10px;
+  width: 150px;
+  height: 300px;
+}
