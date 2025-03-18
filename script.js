@@ -11,12 +11,6 @@ const arrayOfhealthWishers = [
   "Stay patient – Healing takes time, so be kind to yourself during the process.",
 ];
 
-const arrayOfImages = [
-"1.jpeg",
-"2.jpg",
-"3.jpg",
-];
-
 let countOfpills = 5;
 document.getElementById("count-of-tablets").innerText = "💊".repeat(
   countOfpills
@@ -46,26 +40,85 @@ document.getElementById("btn-byu-tablets").addEventListener("click", () => {
   document.getElementById("btn_health_wishes").style.display = "inline-block";
 });
 
+const arrayOfImages = [
+  "1.jpg",
+  "2.jpg",
+  "3.jpg"
+  ]
+
 let galleryImage = 1
 
-    document.getElementById("main-image").setAttribute("src",img/gallery/${galleryImage}.jpg)
+    document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfImages[galleryImage-1]}`)
       
       document.getElementById("right-arrow").addEventListener('click', ()=>{
         galleryImage++
         console.log(galleryImage)
       
-        if(galleryImage == 4)
-           {galleryImage = 1}
+        if(galleryImage == arrayOfImages.length + 1) galleryImage = 1
 
-        document.getElementById("main-image").setAttribute("src",img/gallery/${galleryImage}.jpg)
+        document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfImages[galleryImage-1]}`)
       })
 
       document.getElementById("left-arrow").addEventListener('click', ()=>{
-        galleryImage++
+        galleryImage--
         console.log(galleryImage)
       
-        if(galleryImage == 4)
-           {galleryImage = 1}
+        if(galleryImage == 0) galleryImage = 3
 
-        document.getElementById("main-image").setAttribute("src",img/gallery/${galleryImage}.jpg)
+        document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfImages[galleryImage-1]}`)
+      })
+
+      const arrayOfObjects = [
+        {
+          id:1,
+          title:"Вітамін В3",
+          photo:"",
+          description:"",
+          rating:5,
+          type:""
+        },
+        {
+          id:2,
+          title:"Вітамін С3",
+          photo:"",
+          description:"",
+          rating:2,
+          type:""
+        },
+        {
+          id:3,
+          title:"Омега",
+          photo:"",
+          description:"",
+          rating:5,
+          type:""
+        },
+        {
+          id:4,
+          title:"Магній B6",
+          photo:"",
+          description:"",
+          rating:3,
+          type:""
+        },
+        {
+          id:5,
+          title:"D3",
+          photo:"",
+          description:"",
+          rating:4,
+          type:""
+        },
+      ]
+
+      console.log(arrayOfObjects)
+
+      arrayOfObjects.forEach((item) =>{
+        console.log(item)
+
+        let divVitamin = document.createElement('div')
+        divVitamin.innerText=item.title
+        divVitamin.classList.add('vitamin')
+
+        document.getElementById("p-vitamins").appendChild(divVitamin)
       })
