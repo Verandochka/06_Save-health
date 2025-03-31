@@ -174,3 +174,12 @@ h2 {
   width: 150px;
   height: 300px;
 }
+
+.vitamin h3 {
+  font-size:24px;
+}
+
+.vitamin img {
+  width: 50px;
+  height: 50px;
+}

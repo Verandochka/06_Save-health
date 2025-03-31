@@ -40,85 +40,97 @@ document.getElementById("btn-byu-tablets").addEventListener("click", () => {
   document.getElementById("btn_health_wishes").style.display = "inline-block";
 });
 
-const arrayOfImages = [
-  "1.jpg",
-  "2.jpg",
-  "3.jpg"
-  ]
+const arrayOfImages = ["1.jpg", "2.jpg", "3.jpg"];
 
-let galleryImage = 1
+let galleryImage = 1;
 
-    document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfImages[galleryImage-1]}`)
-      
-      document.getElementById("right-arrow").addEventListener('click', ()=>{
-        galleryImage++
-        console.log(galleryImage)
-      
-        if(galleryImage == arrayOfImages.length + 1) galleryImage = 1
+document
+  .getElementById("main-image")
+  .setAttribute("src", `img/gallery/${arrayOfImages[galleryImage - 1]}`);
 
-        document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfImages[galleryImage-1]}`)
-      })
+document.getElementById("right-arrow").addEventListener("click", () => {
+  galleryImage++;
+  console.log(galleryImage);
 
-      document.getElementById("left-arrow").addEventListener('click', ()=>{
-        galleryImage--
-        console.log(galleryImage)
-      
-        if(galleryImage == 0) galleryImage = 3
+  if (galleryImage == arrayOfImages.length + 1) galleryImage = 1;
 
-        document.getElementById("main-image").setAttribute('src',`img/gallery/${arrayOfImages[galleryImage-1]}`)
-      })
+  document
+    .getElementById("main-image")
+    .setAttribute("src", `img/gallery/${arrayOfImages[galleryImage - 1]}`);
+});
 
-      const arrayOfObjects = [
-        {
-          id:1,
-          title:"Вітамін В3",
-          photo:"",
-          description:"",
-          rating:5,
-          type:""
-        },
-        {
-          id:2,
-          title:"Вітамін С3",
-          photo:"",
-          description:"",
-          rating:2,
-          type:""
-        },
-        {
-          id:3,
-          title:"Омега",
-          photo:"",
-          description:"",
-          rating:5,
-          type:""
-        },
-        {
-          id:4,
-          title:"Магній B6",
-          photo:"",
-          description:"",
-          rating:3,
-          type:""
-        },
-        {
-          id:5,
-          title:"D3",
-          photo:"",
-          description:"",
-          rating:4,
-          type:""
-        },
-      ]
+document.getElementById("left-arrow").addEventListener("click", () => {
+  galleryImage--;
+  console.log(galleryImage);
 
-      console.log(arrayOfObjects)
+  if (galleryImage == 0) galleryImage = 3;
 
-      arrayOfObjects.forEach((item) =>{
-        console.log(item)
+  document
+    .getElementById("main-image")
+    .setAttribute("src", `img/gallery/${arrayOfImages[galleryImage - 1]}`);
+});
 
-        let divVitamin = document.createElement('div')
-        divVitamin.innerText=item.title
-        divVitamin.classList.add('vitamin')
+const arrayOfVitamins = [
+  {
+    id: 1,
+    title: "Вітамін В3",
+    photo: "vitamin.png",
+    description:
+      "Нікоти́нова кислота — розчинний у воді вітамін; необхідний для багатьох реакцій окиснення у живих клітинах.",
+    rating: 5,
+    type: "",
+  },
+  {
+    id: 2,
+    title: "Вітамін С3",
+    photo: "vitamin-c.png",
+    description: "",
+    rating: 2,
+    type: "",
+  },
+  {
+    id: 3,
+    title: "Омега",
+    photo: "omega.png",
+    description: "",
+    rating: 5,
+    type: "",
+  },
+  {
+    id: 4,
+    title: "Магній B5",
+    photo: "b5.png",
+    description: "",
+    rating: 3,
+    type: "",
+  },
+  {
+    id: 5,
+    title: "D3",
+    photo: "vitamin-d.png",
+    description: "",
+    rating: 4,
+    type: "",
+  },
+];
 
-        document.getElementById("p-vitamins").appendChild(divVitamin)
-      })
+//console.log(arrayOfVitamins)
+
+arrayOfVitamins.forEach((item, index) => {
+  // console.log("елемент №",index,item)
+
+  let divVitamin = document.createElement("div");
+  divVitamin.classList.add("vitamin");
+
+  document.getElementById("p-vitamins").appendChild(divVitamin);
+
+  divVitamin.innerHTML = `
+       <span>${item.id}</span>
+       <h3>${item.title}</h3>
+       <hr>
+          <img src="img/vitamins/${item.photo}" alt="">
+          <p>${item.description}</p>
+          <span>${"❤".repeat(item.rating) + "😂".repeat(5 - item.rating)}</span>
+          <p>type</p>
+            `;
+});
