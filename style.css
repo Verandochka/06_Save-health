@@ -41,7 +41,7 @@ h2 {
 }
 
 .container {
-  width: 480px;
+  width: 800px;
   margin: 0 auto;
 }
 
@@ -166,13 +166,18 @@ h2 {
 }
 
 .vitamin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   border: 1px solid rgb(124,124,124);
   margin:10px;
   padding:10px;
   border-radius: 5px;
   box-shadow: #666666 5px 5px 10px;
-  width: 150px;
-  height: 300px;
+  width: 250px;
+  min-height: 300px;
+  text-align: center;
 }
 
 .vitamin h3 {
@@ -180,6 +185,34 @@ h2 {
 }
 
 .vitamin img {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
+}
+
+/* description */
+
+/* type */
+.vitamin div>p:last-child{
+  text-align: center;
+  width: 100%;
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  border-radius: 10px 10px 10px 10px;
+  background-color: #84ebc3;
+  font-size: 14px;
+}
+
+/* rating*/
+.vitamin div>p:nth-child(2){
+  text-align: center;
+  width: 100%;
+  color: #ff0000;
+  border-radius: 10px 10px 10px 10px;
+  font-size: 14px;
+}
+
+/*блок притиснутий до низу картки*/
+.vitamin div{
+  margin-top: auto;
+  width: 100%;
 }
