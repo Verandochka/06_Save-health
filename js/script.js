@@ -45,21 +45,21 @@ const arrayOfImages = ["1.jpg", "2.jpg", "3.jpg"];
 let galleryImage = 1;
 
 document
-  .getElementById("main-image")
+  .getElementById('main-image')
   .setAttribute("src", `../img/gallery/${arrayOfImages[galleryImage - 1]}`);
 
-document.getElementById("right-arrow").addEventListener("click", () => {
+document.getElementById('right-arrow').addEventListener("click", () => {
   galleryImage++;
   console.log(galleryImage);
 
   if (galleryImage == arrayOfImages.length + 1) galleryImage = 1;
 
   document
-    .getElementById("main-image")
+    .getElementById('main-image')
     .setAttribute("src", `../img/gallery/${arrayOfImages[galleryImage - 1]}`);
 });
 
-document.getElementById("left-arrow").addEventListener("click", () => {
+document.getElementById('left-arrow').addEventListener("click", () => {
   galleryImage--;
   console.log(galleryImage);
 
@@ -84,11 +84,11 @@ fetch('js/vitamins.json')
        <p>${item.id}</p>
        <h3>${item.title}</h3>
        <hr>
-          <img src="../img/vitamins/${item.photo}" alt="">
+          <img src="../img/vitamins/${item.photo}" class="vitamin-logo" alt="Картинка для ${item.title}" onerror="this.onerror=null; this.src='img/vitamins/default.png';">
           <p>${item.description}</p>
 
           <div>
-                    <img src="../img/scheme/${item.scheme}" alt="">
+                    <img src="../img/scheme/${item.scheme}" alt="Схема для ${item.title}" onerror="this.onerror=null; this.src='img/scheme/schema.png';" >
                     <p>${
 
                       "❤".repeat(item.rating) + "😂".repeat(5 - item.rating)
