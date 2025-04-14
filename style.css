@@ -250,3 +250,26 @@ h2 {
   margin-top: auto;
   width: 100%;
 }
+
+/*filter*/
+#vitamin-filter {
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 12px;
+  border:x solid  2p#3c9c3c;
+  background-color: #d6f5d6;
+  color: #215e21;
+  margin: 15px 0 25px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#vitamin-filter:hover {
+  background-color: #b2eab2;
+  border-color: #2e802e;
+}
+
+#vitamin-filter:focus {
+  outline: none;
+  box-shadow: 0 0 5px #57cc57;
+}
